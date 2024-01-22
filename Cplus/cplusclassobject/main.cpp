@@ -21,30 +21,38 @@ void multiplay()
     int Division ();
     int Modulus();
     int Increment();
+    int Decrement();
 };
 
 int myfirstclass::Division()
 {
     int d,e,f;
-    cout <<"Enter The D Value: \n";
+    cout <<"\n Enter The D Value: \n";
     cin >> d;
-    cout <<"Enter The E Value: \n";
+    cout <<"\n Enter The E Value: \n";
     cin >> e;
-    cout <<"Division\n";
+    cout <<"\n Division\n";
     cout <<"The F Value"<<(d/e);
     }
 
 int myfirstclass::Modulus(){
-    int d,e,f;
-    cout <<"Modulus\n";
+    int d,e,f,g;
+    cout <<"\n Modulus\n";
     cout <<"The F Value"<<(d%e);
 }
 
 int myfirstclass::Increment()
 {
     int d;
-    cout <<"Increment\n";
+    cout <<"\n Increment\n";
     cout <<"The F Value"<<(++d);
+}
+
+int myfirstclass::Decrement()
+{
+    int g=5;
+    cout <<"\n Decrement\n";
+    cout <<"The F Value"<<(--g);
 }
 int main()
 {
@@ -54,5 +62,6 @@ int main()
     mfc.Division();
     mfc.Modulus();
     mfc.Increment();
+    mfc.Decrement();
     return 0;
 }
