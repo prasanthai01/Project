@@ -45,9 +45,17 @@ print("Your First_name :",First_name)
 print("Your Last_name  :",Last_name)
 print(First_name + " " + Last_name)
 
-#Tesing Usege String:
+#Tesing Usge String:
 print(First_name.strip())
 print(First_name.upper())
 print(Last_name.lower())
 print(First_name.title())
 print(First_name.replace("S","p"))
+
+#format string:
+name = "Saranya"
+product = "Smart watch"
+cost = 1500
+myorder ="Hey {} your order {} purchase and pay the {}."
+print(myorder.format(name,product,cost))
+
