@@ -1,47 +1,60 @@
 from tkinter import *
 
-app =Tk()
-app.title("My first python GUI app")
-app.geometry("500x500+500+100")
-app.config(bg="Green")
-#app.state("zoomed")
+def math_operation():
+    ravanan=Tk()
+    ravanan.title("Mathematical Operations")
+    ravanan.geometry("500x500+500+500")
+    ravanan.state("zoomed")
 
-def Addition():
-    a=17
-    b=18
-    c=a+b
-    lbltitle.config(text=c,fg="Blue")
+    def Addition():
+        a=int(tbEntrya.get())
+        b=int(tbEntryb.get())
+        c=a+b
+        labeloutput.config(text=c)
+    def Subtraction():
+        a=int(tbEntrya.get())
+        b=int(tbEntryb.get())
+        c=a-b
+        labeloutput.config(text=c)
+    def Multiplication():
+        a=int(tbEntrya.get())
+        b=int(tbEntryb.get())
+        c=a*b
+        labeloutput.config(text=c)
+    def Division():
+        a=int(tbEntrya.get())
+        b=int(tbEntryb.get())
+        c=a/b
+        labeloutput.config(text=c)
 
-def subraction():
-    a=50
-    b=20
-    c=a-b
-    lbltitle1.config(text=c,fg="Blue")
+    Labeltitle=Label(ravanan,text="Arithematic Operations",font=("ALGERIAN",16),fg="green")
+    Labeltitle.grid(row=0,column=20)
 
-lbltitle=Label(app,text="Arithemetic Operations")
-lbltitle.grid(row=0, column=1, padx=40, pady=40)
+    label1msg=Label(ravanan,text="Enter the Value of A",font=("Lucida Calligraphy",14),fg="blue")
+    label1msg.grid(row=1,column=20,pady=20)
+    tbEntrya=Entry(ravanan, width=60)
+    tbEntrya.grid(row=1,column=25)
 
-inputbox1=Entry(app,width=30)
-inputbox1.grid(row=0, column=2)
+    label2msg=Label(ravanan,text="Enter the Value of B",font=("Lucida Calligraphy",14),fg="blue")
+    label2msg.grid(row=2,column=20,pady=20)
+    tbEntryb=Entry(ravanan, width=60)
+    tbEntryb.grid(row=2,column=25)
 
-
-lbltitle=Label(app,text="***")
-lbltitle.grid(row=2, column=2, padx=40, pady=40)
-
-inputbox2=Entry(app,width=40)
-inputbox2.grid(row=1, column=2)
-
-clickme1=Button(app,text="Addition",command=Addition)
-clickme1.grid(row=6,column=2)
+    labeloutput=Label(ravanan,text=" ")
+    labeloutput.grid(row=3,column=30,pady=20)
 
 
-lbltitle1=Label(app,text="###")
-lbltitle1.grid(row=3, column=4, padx=40, pady=40)
+    btnadd=Button(ravanan,text="Addition",font=("calibri",14),fg="White",bg="Black",command=Addition)
+    btnadd.grid(row=5,column=1)
 
-inputbox2=Entry(app,width=30)
-inputbox2.grid(row=2, column=4)
+    btnsub=Button(ravanan,text="Subtraction",font=("calibri",14),fg="White",bg="Black",command=Subtraction)
+    btnsub.grid(row=5,column=2)
 
-clickme2=Button(app,text="Subraction",command=subraction)
-clickme2.grid(row=7,column=4)
+    btnmul=Button(ravanan,text="Multiplication",font=("calibri",14),fg="White",bg="Black",command=Multiplication)
+    btnmul.grid(row=5,column=3)
 
-app.mainloop()
+    btndiv=Button(ravanan,text="Division",font=("calibri",14),fg="White",bg="Black",command=Division)
+    btndiv.grid(row=5,column=4)
+
+
+    ravanan.mainloop()

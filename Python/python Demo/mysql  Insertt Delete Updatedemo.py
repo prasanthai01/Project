@@ -40,6 +40,31 @@ def Insert():
 
     print(result.rowcount, "row inserted")
 
+def Delete():
+    a=(tbinput1.get())
+
+    cl=mydbconnection()       
+    result=cl.cursor()
+    
+    sql="Delete from Mark_list where name=(%s)"
+    val=(a,)
+    result.execute(sql, val)
+    cl.commit()
+
+    print(result.rowcount, "row deleted")
+    
+def Update():
+    a=(tbinput1.get())
+
+    cl= mydbconnection()
+    result=cl.cursor()
+
+    sql="Update from Mark_list set name=(%s) where name=(%s)"
+    val=(a,)
+    result.execute(sql,val)
+    cl.commit()
+
+    print(result.rowcount, "row Update")
 
 #label    
 labelTitle=Label(zara,text="MARK LIST")
@@ -97,6 +122,14 @@ btn.grid(row=8, column=2,padx=20,pady=20)
 btn.configure(bg="Light Green", fg="Black")
 
 
+btn2=Button(zara,text="Delete", command=Delete)
+btn2.grid(row=8, column=3,padx=20,pady=20)
+btn2.configure(bg="Light Green", fg="Black")
+
+
+btn3=Button(zara,text="Update", command=Delete)
+btn3.grid(row=8, column=4,padx=20,pady=20)
+btn3.configure(bg="Light Green", fg="Black")
 
 #labeloutput
 
